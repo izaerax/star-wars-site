@@ -1,0 +1,19 @@
+header {
+  background-color: #3F3F3F;
+
+  .title {
+    font-family: 'Star Jedi';
+    font-size: 24px;
+    color: #FFE81F;
+    padding: 12px 8px;
+  }
+
+  .nav {
+    background-color: #CCCCCC;
+    padding: 8px;
+
+    .nav-item {
+      padding-right: 8px;
+    }
+  }
+}

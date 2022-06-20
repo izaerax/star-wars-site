@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Star Jedi';
+  src: local('Star Jedi') url('./assets/fonts/StarjediSpecialEdition-9Bqy.ttf')  format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3F3F3F;
+}
+
+.f {
+  &-weight{
+    font-weight: 700;
+  }
+}
+
+.undecorated-link {
+  text-decoration: none;
+  color: inherit;
+}

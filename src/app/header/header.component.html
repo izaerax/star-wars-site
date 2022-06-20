@@ -1,0 +1,12 @@
+<header>
+  <div class="title"><a class="undecorated-link"href="/">STAR WARS</a></div>
+  <nav class="nav">
+    <a *ngFor="let item of menuList"
+      class="undecorated-link nav-item"
+      [class.f-weight]="item.weight"
+      [routerLink]="item.path"
+    >
+      {{ item.title }}
+    </a>
+  </nav>
+</header>
