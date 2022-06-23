@@ -1,0 +1,28 @@
+<div class="page" *ngIf="film">
+  <h3 class="title no-margin">{{film.title}}</h3>
+  <div class="alert" *ngIf="error">{{error}}</div>
+  <div class="splitter" *ngIf="!error">
+    <div>
+      <p class="crawl">{{film.opening_crawl}}</p>
+    </div>
+    <div>
+      <section class="details">
+        <h4 class="title-small no-margin">Details</h4>
+        <ul class="undecorated-list">
+          <li><strong>Director:</strong> {{film.director}}</li>
+          <li><strong>Producer:</strong> {{film.producer}}</li>
+          <li><strong>Release Date:</strong> {{film.release_date}}</li>
+        </ul>
+      </section>
+      <section class="characters">
+        <h4 class="title-small no-margin">Characters</h4>
+        <ul class="undecorated-list">
+          <li *ngFor="let character of characters">
+            <a [routerLink]="'/characters/'+character.id" class="undecorated-link">{{character.name}}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+

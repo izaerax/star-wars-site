@@ -1,0 +1,26 @@
+<div class="page" *ngIf="vehicle">
+  <h3 class="title no-margin">{{vehicle.name}}</h3>
+
+  <div class="splitter">
+    <section class="details">
+      <h4 class="title-small no-margin">Details</h4>
+      <ul class="undecorated-list">
+        <li><strong>Model:</strong> {{vehicle.model}}</li>
+        <li><strong>Manufacturer:</strong> {{vehicle.manufacturer}}</li>
+        <li><strong>Cost:</strong> {{vehicle.cost_in_credits}} credits</li>
+        <li><strong>Length:</strong> {{vehicle.length}}</li>
+        <li><strong>Max atmosphering speed:</strong> {{vehicle.max_atmosphering_speed}}</li>
+        <li><strong>Class:</strong> {{vehicle.class}}</li>
+        <li><strong>Cargo capacity:</strong> {{vehicle.cargo_capacity}}</li>
+      </ul>
+    </section>
+    <section class="films">
+      <h4 class="title-small no-margin">Films</h4>
+      <ul class="undecorated-list">
+        <li *ngFor="let film of films">
+          <a [routerLink]="'/films/'+ film.id" class="undecorated-link">{{film.title}}</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>

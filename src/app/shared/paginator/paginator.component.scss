@@ -1,0 +1,53 @@
+.paginator {
+  display: flex;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column-reverse;
+  }
+
+  .status {
+    flex-grow: 1;
+    width: 50%;
+    margin: 15px 0;
+    align-self: center;
+
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+      align-self: center;
+      text-align: center;
+    }
+  }
+
+  .page-picker {
+    font-weight: 700;
+    text-align: center;
+    list-style: none;
+    flex-grow: 1;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    padding-left: 0;
+    margin: 15px 0;
+
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    li {
+      background-color: #D9D9D9;
+      border-radius: 4px;
+      margin-right: 8px;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .page-index {
+      border-radius: 25px;
+    }
+  }
+}

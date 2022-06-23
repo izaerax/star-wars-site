@@ -1,0 +1,20 @@
+<div class="page">
+  <div *ngIf="isFetching">
+    loading...
+  </div>
+  <div *ngIf="!isFetching">
+    <h1 class="no-margin title">{{character.name}}</h1>
+    <h3 class="no-margin title-small" style="padding-top:22px;">Detail</h3>
+    <ul class="undecorated-list" style="padding-top: 16px;">
+      <li><strong>Birth Year:</strong> {{character.birth_year}}</li>
+      <li><strong>Homeworld:</strong> {{character.homeworld}}</li>
+      <li><strong>Gender:</strong> {{character.gender}}</li>
+      <li><strong>Height:</strong> {{character.height}}</li>
+      <li><strong>Mass:</strong> {{character.mass}}</li>
+      <li><strong>Hair Color:</strong> {{character.hair_color}}</li>
+      <li><strong>Skin Color:</strong> {{character.skin_color}}</li>
+      <li><strong>Eye Color:</strong> {{character.eye_color}}</li>
+      <li><strong>Films:</strong> {{character.films_count}}</li>
+    </ul>
+  </div>
+</div>

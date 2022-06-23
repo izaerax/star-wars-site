@@ -1,0 +1,52 @@
+.title {
+  padding-bottom: 24px;
+}
+
+table {
+  border-radius: 2px;
+  border-collapse: collapse;
+  width: 100%;
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px 10px;
+    line-height: 16px;
+  }
+
+  tr:first-child {
+    background-color: #0000000D;
+  }
+
+  td:first-child {
+    color: #3E7CF4;
+  }
+}
+
+.film-list {
+  border-radius: 2px;
+
+  .list-header {
+    background-color: #0000000D;
+    display: flex;
+    flex-direction: row;
+
+    .th {
+      border: 1px solid #dddddd;
+      padding: 8px 10px;
+      flex-grow: 1;
+    }
+  }
+
+  .list-body {
+    display: flex;
+    flex-direction: row;
+
+    .tr {
+      border: 1px solid #dddddd;
+      padding: 8px 10px;
+      flex-grow: 1;
+    }
+
+  }
+}

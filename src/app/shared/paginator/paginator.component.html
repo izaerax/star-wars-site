@@ -1,0 +1,10 @@
+<div class="paginator">
+  <div class="status">
+    Page {{pageIndex}} of {{lastPage}}, {{totalCount}} total results.
+  </div>
+  <ol class="page-picker">
+    <li (click)="navigateTo(pageIndex - 1)">Previous</li>
+    <li class="page-index" *ngFor="let i of pagination" (click)="navigateTo(i)">{{i}}</li>
+    <li (click)="navigateTo(pageIndex + 1)">Next</li>
+  </ol>
+</div>

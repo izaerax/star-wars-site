@@ -1,0 +1,44 @@
+<div class="page">
+  <h3 class="title no-margin">Vehicles</h3>
+
+  <!-- LIST COMPONENT -->
+  <table *ngIf="getScreenWidth > 480">
+    <tr>
+      <th>Name</th>
+      <th>Model</th>
+      <th>Manufacturer</th>
+      <th>Cost</th>
+      <th>Class</th>
+    </tr>
+    <p *ngIf="isFetching">Loading...</p>
+    <tr *ngFor="let vehicle of vehicleList; let i = index" [routerLink]="vehicle.id">
+      <td>{{vehicle.name}}</td>
+      <td>{{vehicle.model}}</td>
+      <td>{{vehicle.manufacturer}}</td>
+      <td>{{vehicle.cost_in_credits}}</td>
+      <td>{{vehicle.class}}</td>
+    </tr>
+  </table>
+
+  <!-- LIST CARDS -->
+  <div class="list-card" *ngIf="getScreenWidth <= 480">
+    <ul class="card-body undecorated-list">
+      <li class="card" *ngFor="let vehicle of vehicleList" [routerLink]="vehicle.id">
+        <div class="f-weight color-blue">{{vehicle.name}}</div>
+        <div><strong>Model:</strong>{{vehicle.model}}</div>
+        <div><strong>Manufacturer:</strong>{{vehicle.manufacturer}}</div>
+        <div><strong>Cost:</strong>{{vehicle.cost_in_credits}}</div>
+        <div><strong>Class:</strong>{{vehicle.class}}</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="alert" *ngIf="error">{{error}}</div>
+
+  <app-paginator
+    [pageSize]="10"
+    [pageIndex]="1"
+    [totalCount]="totalCount"
+    (page)="fetchVehicles($event)">
+  </app-paginator>
+</div>

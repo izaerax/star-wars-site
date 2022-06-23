@@ -1,0 +1,45 @@
+$link: #3F3F3F;
+
+.splitter {
+  padding-top: 22px;
+  display: flex;
+  flex-direction: row;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+
+  & > div {
+    flex-grow: 1;
+    flex-basis: auto;
+    width: 50%;
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  .crawl {
+    white-space: pre-wrap;
+  }
+
+  .details {
+    line-height: 22px;
+
+    & > h4 {
+      padding-bottom: 16px;
+    }
+  }
+
+  .characters {
+    padding-top: 26px;
+
+    & > h4 {
+      padding-bottom: 20px;
+    }
+
+    a {
+      color: #3E7CF4;
+      line-height: 22px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.splitter {
+  display: flex;
+
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+
+  & > section {
+    padding-top: 22px;
+    flex-grow: 1;
+    flex-basis: auto;
+    width: 50%;
+
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+    }
+
+    & > h4 {
+      padding-bottom: 20px;
+    }
+  }
+
+  .films {
+    a {
+      color: #3E7CF4;
+      line-height: 22px;
+    }
+  }
+}

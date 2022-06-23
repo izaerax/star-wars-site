@@ -1,0 +1,44 @@
+<div class="page">
+  <h3 class="title no-margin">Films</h3>
+
+  <!-- LIST TABLE -->
+  <table *ngIf="getScreenWidth > 480">
+    <tr>
+      <th>Movie</th>
+      <th>Director</th>
+      <th>Producer</th>
+      <th>Release Date</th>
+    </tr>
+    <p *ngIf="isFetching">Loading...</p>
+    <tr *ngFor="let film of filmList; let i = index" [routerLink]="film.id">
+      <td>{{film.title}}</td>
+      <td>{{film.director}}</td>
+      <td>{{film.producer}}</td>
+      <td>{{film.release_date}}</td>
+    </tr>
+  </table>
+
+  <!-- LIST CARDS -->
+  <div class="list-card" *ngIf="getScreenWidth <= 480">
+    <ul class="card-body undecorated-list">
+      <li class="card" *ngFor="let film of filmList" [routerLink]="film.id">
+        <div class="f-weight color-blue">{{film.title}}</div>
+        <div><strong>Director:</strong>{{film.director}}</div>
+        <div><strong>Producer:</strong>{{film.producer}}</div>
+        <div><strong>Release Date:</strong>{{film.release_date}}</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="alert" *ngIf="error">{{error}}</div>
+
+  <app-paginator
+    [pageSize]="10"
+    [pageIndex]="1"
+    [totalCount]="totalCount"
+    (page)="fetchFilms($event)">
+
+  </app-paginator>
+
+  <!-- PAGINATION COMPONENT -->
+</div>
