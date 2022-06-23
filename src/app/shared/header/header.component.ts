@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 import { MenuItem, MenuService } from './menu.service';
 
 @Component({
@@ -9,8 +11,19 @@ import { MenuItem, MenuService } from './menu.service';
 export class HeaderComponent implements OnInit {
 
   menuList: MenuItem[] = [];
+  activeUrl: string = ''
 
-  constructor(private menuService: MenuService) {
+  constructor(
+    private menuService: MenuService,
+    private router: Router
+  ) {
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+          this.activeUrl = event.url;
+          console.log(event);
+      }
+    });
+
   }
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@
   <nav class="nav">
     <a *ngFor="let item of menuList"
       class="undecorated-link nav-item"
+      [class.active]="activeUrl == item.path"
       [routerLink]="item.path"
     >
       {{ item.title }}

@@ -2,7 +2,7 @@
   <h3 class="title no-margin">Films</h3>
 
   <!-- LIST TABLE -->
-  <table *ngIf="getScreenWidth > 480">
+  <table *ngIf="getScreenWidth > 480 && !isFetching">
     <tr>
       <th>Movie</th>
       <th>Director</th>
@@ -18,7 +18,7 @@
   </table>
 
   <!-- LIST CARDS -->
-  <div class="list-card" *ngIf="getScreenWidth <= 480">
+  <div class="list-card" *ngIf="getScreenWidth <= 480 && !isFetching">
     <ul class="card-body undecorated-list">
       <li class="card" *ngFor="let film of filmList" [routerLink]="film.id">
         <div class="f-weight color-blue">{{film.title}}</div>
@@ -29,10 +29,10 @@
     </ul>
   </div>
 
-  <p *ngIf="isFetching">Loading...</p>
+  <p class="loading" *ngIf="isFetching">Loading...</p>
   <div class="alert" *ngIf="error">{{error}}</div>
 
-  <app-paginator
+  <app-paginator *ngIf="!isFetching"
     [pageSize]="10"
     [pageIndex]="1"
     [totalCount]="totalCount"

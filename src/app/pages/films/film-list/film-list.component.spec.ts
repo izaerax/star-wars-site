@@ -45,7 +45,6 @@ describe('FilmListComponent', () => {
   it('mobile: all films fetched are visible', () => {
     component.getScreenWidth = 479
     let compiled = fixture.debugElement.nativeElement
-    // component.ngOnInit()
     expect(component.filmList.length === compiled.querySelectorAll('li > div').length).toBeTruthy()
   })
 
@@ -57,4 +56,13 @@ describe('FilmListComponent', () => {
       compiled.querySelector('.alert').innerText === component.error).toBeTruthy()
   });
 
+  it('only loading is visible if fetching', () => {
+    component.isFetching = true
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement
+    expect(compiled.querySelector('.loading') !== null).toBeTruthy()
+    expect(compiled.querySelector('table') === null).toBeTruthy()
+    expect(compiled.querySelector('.list-card') === null).toBeTruthy()
+    expect(compiled.querySelector('app-paginator') === null).toBeTruthy()
+  })
 });

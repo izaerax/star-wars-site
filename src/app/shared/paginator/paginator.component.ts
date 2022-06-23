@@ -19,8 +19,8 @@ export class PaginatorComponent implements OnInit {
   ngOnInit(): void { }
 
   navigateTo(index: number) {
-    console.debug(index)
-    if (index <= this.lastPage && index > 0) {
+
+    if (index <= this.lastPage && index > 0 && index !== this.pageIndex) {
       this.pageIndex = index
       this.page.emit(this.pageIndex)
     }

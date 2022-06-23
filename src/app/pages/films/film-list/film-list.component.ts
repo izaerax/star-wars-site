@@ -14,7 +14,7 @@ export class FilmListComponent implements OnInit {
   totalCount: number = 0
   error: string = ''
   getScreenWidth!: number
-
+  
   constructor(private filmService: FilmService) { }
 
   ngOnInit(): void {
