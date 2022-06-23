@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Character } from '../../characters/character.model';
 import { CharacterService } from '../../characters/character.service';
 import { Film } from '../film.model';
-import { FilmsService } from '../films.service';
+import { FilmService } from '../film.service';
 
 @Component({
   selector: 'app-film-detail',
@@ -17,7 +17,7 @@ export class FilmDetailComponent implements OnInit {
   error: string = ''
 
   constructor(
-    private filmService: FilmsService,
+    private filmService: FilmService,
     private characterService: CharacterService,
     private route: ActivatedRoute
   ) { }

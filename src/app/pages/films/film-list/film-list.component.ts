@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Film } from '../film.model'
-import { FilmsService } from '../films.service';
+import { FilmService } from '../film.service';
 
 @Component({
   selector: 'app-film-list',
@@ -15,7 +15,7 @@ export class FilmListComponent implements OnInit {
   error: string = ''
   getScreenWidth!: number
 
-  constructor(private filmService: FilmsService) { }
+  constructor(private filmService: FilmService) { }
 
   ngOnInit(): void {
     this.getScreenWidth = window.innerWidth;

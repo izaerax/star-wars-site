@@ -7,7 +7,7 @@ import { throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FilmsService {
+export class FilmService {
 
   constructor(
     private apiService: ApiService

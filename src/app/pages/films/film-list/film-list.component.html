@@ -9,7 +9,6 @@
       <th>Producer</th>
       <th>Release Date</th>
     </tr>
-    <p *ngIf="isFetching">Loading...</p>
     <tr *ngFor="let film of filmList; let i = index" [routerLink]="film.id">
       <td>{{film.title}}</td>
       <td>{{film.director}}</td>
@@ -30,6 +29,7 @@
     </ul>
   </div>
 
+  <p *ngIf="isFetching">Loading...</p>
   <div class="alert" *ngIf="error">{{error}}</div>
 
   <app-paginator

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Film } from '../../films/film.model';
-import { FilmsService } from '../../films/films.service';
+import { FilmService } from '../../films/film.service';
 import { Vehicle } from '../vehicle.model';
 import { VehicleService } from '../vehicle.service';
 
@@ -18,7 +18,7 @@ export class VehicleDetailComponent implements OnInit {
 
   constructor(
     private vehicleService: VehicleService,
-    private filmService: FilmsService,
+    private filmService: FilmService,
     private route: ActivatedRoute
   ) { }
 
